@@ -15,7 +15,11 @@ Club.init({
     },
     manager_id: { 
         type: DataTypes.UUID, 
-        allowNull: true // Bisa null jika manager belum ditentukan
+        allowNull: true
+    },
+    logo_club: {
+        type: DataTypes.STRING,
+        allowNull: true
     }
 }, {
     sequelize,
@@ -27,7 +31,6 @@ Club.init({
 });
 
 Club.associate = function (models) {
-    // Relasi: Club dimiliki oleh satu User (Manager)
     Club.belongsTo(models.User, { foreignKey: "manager_id", as: "manager" });
 };
 

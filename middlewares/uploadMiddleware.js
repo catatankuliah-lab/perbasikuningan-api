@@ -1,15 +1,22 @@
 // middlewares/uploadMiddleware.js
 const multer = require("multer");
 const path = require("path");
+const fs = require("fs");
 
 // Konfigurasi tempat penyimpanan & penamaan file
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, "public/uploads/"); // Pastikan folder public/uploads sudah ada di root project
+    const dir = "uploads/";
+    // Membuat folder 'uploads' secara otomatis jika belum ada
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    cb(null, dir);
   },
   filename: (req, file, cb) => {
+    // Memberikan nama file yang unik: clubs-1726xxx-999.png
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, "expense-" + uniqueSuffix + path.extname(file.originalname));
+    cb(null, "clubs-" + uniqueSuffix + path.extname(file.originalname));
   },
 });
 
@@ -24,7 +31,7 @@ const fileFilter = (req, file, cb) => {
 
 const upload = multer({ 
   storage: storage, 
-  limits: { fileSize: 2 * 1024 * 1024 }, // Maksimal 2MB
+  limits: { fileSize: 2 * 1024 * 1024 }, // Batas maksimal 2MB
   fileFilter: fileFilter 
 });
 
