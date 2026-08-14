@@ -4,6 +4,7 @@ const Club = require('./clubModel');
 const Player = require('./playerModel');
 const Event = require('./eventModel');
 const Official = require('./officialModel');
+const Match = require('./matchModel');
 // Tambahkan import model lain di sini
 
 const db = {
@@ -13,6 +14,7 @@ const db = {
   Player,
   Event,
   Official,
+  Match,
 };
 
 // Panggil associate jika ada
