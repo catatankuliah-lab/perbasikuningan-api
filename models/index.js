@@ -1,10 +1,12 @@
 const sequelize = require('../config/sequelize');
 const User = require('./userModel');
+const Club = require('./clubModel');
 // Tambahkan import model lain di sini
 
 const db = {
   sequelize,
   User,
+  Club,
 };
 
 // Panggil associate jika ada
