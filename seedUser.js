@@ -1,30 +1,30 @@
 // seedUser.js
-const bcrypt = require("bcrypt");
-const User = require("./models/userModel"); // 🎯 Import langsung dari file model user
+const bcrypt = require("bcryptjs"); // Gunakan bcryptjs (sesuai dengan model tadi)
+const User = require("./models/userModel"); 
 const sequelize = require("./config/sequelize");
 
 async function seedAdmin() {
   try {
-    // Tes koneksi database
     await sequelize.authenticate();
     console.log("✅ Terhubung ke database untuk seeding...");
 
-    const hashedPassword = await bcrypt.hash("kalaitudev", 10);
-
-    const existingUser = await User.findOne({ where: { username: "perbasikuningan" } });
+    // Cek apakah email admin sudah ada
+    const existingUser = await User.findOne({ where: { email: "perbasikuningan@gmail.com" } });
     if (existingUser) {
       console.log("⚠️ User admin sudah ada di database!");
       process.exit();
     }
 
     await User.create({
-      username: "perbasikuningan",
-      password: hashedPassword,
-      role: "admin",
+      email: "perbasikuningan@gmail.com",
+      password_hash: "kalaitudev", 
+      role: "IT Support",
+      full_name: "Admin Perbasi",
+      is_active: true
     });
 
     console.log(
-      '✅ Berhasil membuat user default: username "perbasikuningan", password "kalaitudev"',
+      '✅ Berhasil membuat user default: email "perbasikuningan@gmail.com", password "kalaitudev"',
     );
     process.exit();
   } catch (error) {

@@ -24,31 +24,11 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 console.log('[DEBUG] 4. Memuat routes...');
 console.log('-> Loading auth & user routes...');
 const authRoutes = require('./routes/authRoutes');
-const customerRoutes = require('./routes/customerRoutes');
-const productRoutes = require('./routes/productRoutes');
-const employeeRoutes = require('./routes/employeeRoutes');
-const transactionRoutes = require('./routes/transactionRoutes');
-const commissionRuleRoutes = require('./routes/commissionRuleRoutes');
-const employeeCommissionRoutes = require('./routes/employeeCommissionRoutes');
-const inventoryRoutes = require('./routes/inventoryRoutes');
-const expenseRoutes = require('./routes/expenseRoutes');
-const reportRoutes = require('./routes/reportRoutes');
-const procurementRoutes = require('./routes/procurementRoutes');
 
 console.log('[DEBUG] 5. Semua routes berhasil dimuat!');
 
 // --- ROUTES ENDPOINTS ---
 app.use('/api/auth', authRoutes);
-app.use('/api/customers', customerRoutes);
-app.use('/api/products', productRoutes);
-app.use('/api/employees', employeeRoutes);
-app.use('/api/transactions', transactionRoutes);
-app.use('/api/commissions/config', commissionRuleRoutes);
-app.use('/api/commissions', employeeCommissionRoutes);
-app.use('/api/inventory', inventoryRoutes);
-app.use('/api/expenses', expenseRoutes);
-app.use('/api/reports', reportRoutes);
-app.use('/api/procurements', procurementRoutes);
 
 
 
