@@ -1,0 +1,11 @@
+node_modules/
+npm-debug.log*
+.env
+.git/
+.gitignore
+Dockerfile
+.dockerignore
+uploads/
+notes/
+.DS_Store
+init_db.sql

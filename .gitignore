@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+
+# Environment variables (SANGAT PENTING JANGAN SAMPAI BOCOR)
+.env
+
+# Uploaded files (KTP Warga, Excel, dan Template Surat)
+uploads/
+
+# macOS system files
+.DS_Store
+
+# Debug logs
+npm-debug.log*

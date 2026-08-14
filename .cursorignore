@@ -1,0 +1,17 @@
+node_modules/
+dist/
+build/
+coverage/
+logs/
+uploads/
+tmp/
+
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.zip
+
+.env
+.env.*
