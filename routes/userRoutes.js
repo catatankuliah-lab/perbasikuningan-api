@@ -11,9 +11,5 @@ router.get('/:id', authorizeRole('IT Support'), userController.getUserById);
 router.post('/', authorizeRole('IT Support'), userController.createUser);
 router.put('/:id', authorizeRole('IT Support'), userController.updateUser);
 router.delete('/:id', authorizeRole('IT Support'), userController.deleteUser);
-// INI BARU
-// INI BARU LAGI
-// jahgsaub
-// tssss
 
 module.exports = router;
