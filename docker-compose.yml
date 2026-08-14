@@ -11,7 +11,7 @@ services:
       - DB_HOST=${DB_HOST}
       - DB_USER=${DB_USER}
       - DB_PASS=${DB_PASS}
-      - DB_NAME=${DB_NAME:-hokisteam}
+      - DB_NAME=${DB_NAME:-perbasikuningan}
       - DB_PORT=${DB_PORT:-3306}
       - AES_SECRET_KEY=${AES_SECRET_KEY}
       - AES_IV_LENGTH=${AES_IV_LENGTH:-16}

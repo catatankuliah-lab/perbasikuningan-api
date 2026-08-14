@@ -11,20 +11,20 @@ async function seedAdmin() {
 
     const hashedPassword = await bcrypt.hash("kalaitudev", 10);
 
-    const existingUser = await User.findOne({ where: { username: "hokisteam" } });
+    const existingUser = await User.findOne({ where: { username: "perbasikuningan" } });
     if (existingUser) {
       console.log("⚠️ User admin sudah ada di database!");
       process.exit();
     }
 
     await User.create({
-      username: "hokisteam",
+      username: "perbasikuningan",
       password: hashedPassword,
       role: "admin",
     });
 
     console.log(
-      '✅ Berhasil membuat user default: username "hokisteam", password "kalaitudev"',
+      '✅ Berhasil membuat user default: username "perbasikuningan", password "kalaitudev"',
     );
     process.exit();
   } catch (error) {
