@@ -24,13 +24,13 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 console.log('[DEBUG] 4. Memuat routes...');
 console.log('-> Loading auth & user routes...');
 const authRoutes = require('./routes/authRoutes');
-
+console.log('-> Loading user routes...');
+const userRoutes = require('./routes/userRoutes'); // 1. Import rutenya
 console.log('[DEBUG] 5. Semua routes berhasil dimuat!');
 
 // --- ROUTES ENDPOINTS ---
 app.use('/api/auth', authRoutes);
-
-
+app.use('/api/users', userRoutes); // 2. Daftarkan rutenya di sini
 
 // Base Endpoint
 app.get('/', (req, res) => {
