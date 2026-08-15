@@ -32,6 +32,8 @@ const eventRoutes = require('./routes/eventRoutes');
 const officialRoutes = require('./routes/officialRoutes');
 const matchRoutes = require('./routes/matchRoutes');
 const eventParticipationRoutes = require('./routes/eventParticipationRoutes');
+const documentRoutes = require('./routes/documentRoutes');
+const matchOfficialRoutes = require('./routes/matchOfficialRoutes');
 console.log('[DEBUG] 5. Semua routes berhasil dimuat!');
 
 // --- ROUTES ENDPOINTS ---
@@ -43,6 +45,8 @@ app.use('/api/events', eventRoutes);
 app.use('/api/officials', officialRoutes);
 app.use('/api/matches', matchRoutes);
 app.use('/api/event-participations', eventParticipationRoutes);
+app.use('/api/documents', documentRoutes);
+app.use('/api/match-officials', matchOfficialRoutes);
 // Base Endpoint
 app.get('/', (req, res) => {
   res.json({

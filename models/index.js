@@ -6,6 +6,8 @@ const Event = require('./eventModel');
 const Official = require('./officialModel');
 const Match = require('./matchModel');
 const EventParticipation = require('./eventParticipationModel');
+const Document = require('./documentModel');
+const MatchOfficial = require('./matchOfficialModel');
 // Tambahkan import model lain di sini
 
 const db = {
@@ -17,6 +19,8 @@ const db = {
   Official,
   Match,
   EventParticipation,
+  Document,
+  MatchOfficial,
 };
 
 // Panggil associate jika ada
