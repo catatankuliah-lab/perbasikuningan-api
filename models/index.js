@@ -5,6 +5,7 @@ const Player = require('./playerModel');
 const Event = require('./eventModel');
 const Official = require('./officialModel');
 const Match = require('./matchModel');
+const EventParticipation = require('./eventParticipationModel');
 // Tambahkan import model lain di sini
 
 const db = {
@@ -15,6 +16,7 @@ const db = {
   Event,
   Official,
   Match,
+  EventParticipation,
 };
 
 // Panggil associate jika ada
